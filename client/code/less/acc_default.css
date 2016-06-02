@@ -1,0 +1,32 @@
+/*发货*/
+.acc_select_time .chose_time i{ background:url(../image/account/icon.png) no-repeat;}
+.acc_fahuo .account_title{ border-bottom:0; padding:25px 15px; margin-bottom:0; line-height:28px;}
+.acc_select_time p{ float:left; font-size:14px; line-height:36px;}
+.acc_select_time .chose_time{ width:114px; height:28px; border:1px solid #dbdbdb; padding:0 7px; margin-top:3px;}
+.acc_select_time .chose_time input{ width:95px; float:left; height:28px; border:0;}
+.acc_select_time .chose_time i{ float:left; width:18px; height:18px; margin-top:6px; background-position:0 -104px;}
+.acc_fahuo .title_btn a{margin-left: 10px; margin-top: 4px;}
+.acc_fahuo .acc_page{ margin-top:20px;}
+.acc_tableBar table tr:hover{ background:#f5f3f3;}
+.acc_fahuo .acc_tongji_list li{ float:left; width:305px; height:165px; text-align:center; color:#333; margin-right:14px;}
+.acc_fahuo .acc_tongji_list .no_right{ margin-right:0;}
+.acc_fahuo .acc_tongji_list .list1{ background:#afc6fc;}
+.acc_fahuo .acc_tongji_list .list2{ background:#a5dde7;}
+.acc_fahuo .acc_tongji_list .list3{ background:#f8c2db;}
+.acc_fahuo .acc_tongji_list .title{ padding:25px 0;}
+.acc_fahuo .acc_tongji_list .number{ font-size:34px; font-weight:bold;}
+.acc_fahuo .tongji_daochu_btn{ margin-left:20px; margin-top:20px; padding-bottom:400px;}
+
+
+/*买手管理 我的订单*/
+.acc_order{ padding:0 15px;}
+.acc_order .account_title{ margin:0; border-bottom:0;}
+.acc_order .acc_c_menu{ position:relative; z-index:10; line-height:43px; border-bottom:2px solid #e6e6e6; margin-bottom:28px;}
+.acc_order .acc_c_menu li{ position:relative; z-index:20; float:left; height:43px; margin-right:25px;}
+.acc_order .acc_c_menu li a{ display:block; width:80px; font-size:16px; text-align:center; line-height:43px;}
+.acc_order .acc_c_menu li.active a{ border-bottom:2px solid #ff6600;}
+.acc_c_search{ margin-bottom:24px; line-height:36px;}
+.acc_order .acc_searchBar{ width:200px;}
+.acc_order .title_btn a{ line-height:35px;}
+.acc_c_search .style{ margin-left:60px;}
+.acc_c_search .style .acc_search_type{ border-right:1px solid #dbdbdb; margin-left:10px; background:#f5f5f5;}

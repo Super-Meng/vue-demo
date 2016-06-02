@@ -1,0 +1,49 @@
+.loginWrap
+	.loginBox
+		.title 帐户登录
+		.login_tr
+			p.fl.login_ico
+			p.fl.login_input.loginBox_user
+				input(type="text" placeholder="请输入手机号码" maxlength="11")
+			.clear
+		.login_tr
+			p.fl.login_ico.login_ico1
+			p.fl.login_input.loginBox_psw
+				input( type="password" placeholder="请输入您的登录密码" maxlength="16")
+			.clear
+		.login_chose
+			//- p.fl
+			//- 	i.active
+			//- 		input(type="hidden" value="1")
+			//- 	span.fl 记住用户名
+			p.fr
+				a(href="findpassword.html") 忘记密码
+			.clear
+		.login_btn
+			input(type="submit" class="btn" value="登录")
+		.login_tip 还没有帐号？
+			a(href="register.html") 立即注册
+script.
+	var _check = new qzb_check()
+	$(function(){
+		//用户输入失焦事件
+		$('.loginBox_user').on('blur', 'input', function(){
+			_check.username('.loginBox_user')
+		})
+		//密码输入失焦事件
+		$('.loginBox_psw').on('blur', 'input', function(){
+			_check.password('.loginBox_psw')
+		})
+		//登录提交
+		$('.login_btn input').on('click',function(){
+			if(
+				!_check.username('.loginBox_user') ||
+				!_check.password('.loginBox_psw')
+			){
+				return false
+			}
+			
+			window.location.href="index.html"
+			return false
+		})
+	})

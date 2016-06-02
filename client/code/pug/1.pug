@@ -1,0 +1,18 @@
+doctype
+head
+	meta(charset="utf-8")
+body
+	.goodsBox
+	.demo
+		| {{message}}
+		input(v-model="message")
+
+	script(src="js/libs/vue.min.js")
+	script(src="js/vue/main.js")
+	script.
+		new Vue({
+			el: '.demo',
+			data: {
+				message: 'Hello Vue.js!'
+			}
+		})

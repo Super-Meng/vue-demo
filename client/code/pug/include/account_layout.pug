@@ -1,0 +1,26 @@
+doctype
+html
+	head
+		meta(charset='utf-8')
+		title 荔秀服饰
+		link(rel="stylesheet" type="text/css" href="css/layout.css")
+		script(type="text/javascript" src="js/libs/jquery.min.js")
+		script(type="text/javascript" src="js/common.js")
+		block head
+	body
+		.header_account
+			include topNav
+			include account_header
+		.content_account
+			.wrap
+				.left_part.fl
+					block leftNav
+				.right_part.fr
+					block content
+				.clear
+		include footerNav
+		script.
+			$(function(){
+				set_acc_height()
+				set_acc_tools()
+			})

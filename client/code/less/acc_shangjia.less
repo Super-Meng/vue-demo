@@ -1,0 +1,1049 @@
+@import (reference) './config/config.less';
+.config(blue);
+@import (less) './config/account.less';
+
+/*dinghuo_add*/
+.dinghuo_add{
+	.name_list{
+		position: relative;
+		margin-top: 30px;
+		margin-bottom: 8px;
+		input{
+			width: 315px;
+			line-height:30px;
+			border: solid 1px #ccc;
+			text-indent: 8px;
+			padding-right: 60px;
+			&:focus{
+				border-color:@c_app;
+			}
+		}
+		a{
+			position: relative;
+			display: inline-block;
+			top: 8px;
+			margin-left: 8px;
+			._icon_account(23px,23px,-295px,0);
+			&:hover{
+				._icon_account(23px,23px,-295px,-31px);
+			}
+		}
+		.remove{
+			width: 48px;
+			height: 24px;
+			line-height: 24px;
+			text-align: center;
+			border-radius: 4px;
+			color: @c_font;
+			background: #ccc;
+			position: absolute;
+			margin: auto;
+			top: 1px;
+			bottom: 0;
+			left: 398px;
+			cursor: pointer;
+			display: none;
+		}
+	}
+	.acc_tableBar{
+		label.table_name{
+			font-size: 14px;
+			color: @c_font;
+			line-height: 45px;
+		}
+		td.table_num{
+			a{
+				float: left;
+				display: block;
+				width: 26px;
+				height: 30px;
+				border: solid 1px #ccc;
+				color: #999;
+				line-height: 30px;
+				text-align: center;
+			}
+			input{
+				float: left;
+				text-align: center;
+				width: 50px;
+				line-height: 30px;
+				height: 30px;
+				border: solid 1px #ccc;
+				border-left: none;
+				border-right: none;
+				color: #333;
+			}
+		}
+	}
+	.btn_list{
+		position: relative;
+		.hollow{
+			padding: 0 20px;
+			line-height: 26px;
+			height: 26px;
+			border: solid 1px @c_app;
+			color: @c_app;
+			border-radius: 4px;
+			position: absolute;
+			margin: auto;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			&:hover{
+				text-decoration: none;
+			}
+		}
+	}
+	.tongji_list{
+		margin: 0 32px;
+		padding: 12px 0;
+		box-sizing: border-box;
+		border: solid 1px #e6e6e6;
+		background: #f2f2f2;
+		p{
+			text-align: right;
+			margin-right: 112px;
+			line-height: 30px;
+			font-size: 18px;
+			.name{
+				font-size: 14px;
+			}
+			&.real{
+				font-weight: bold;
+				.name{
+					font-weight: normal;
+				}
+			}
+		}
+		a{
+			font-size: 14px;
+			margin-right: 112px;
+			color: @c_app;
+		}
+	}
+	.other_list{
+		padding: 32px;
+		.list{
+			padding-bottom: 16px;
+			label{
+				float: left;
+				display: block;
+				width: 80px;
+				text-align: right;
+				margin-right: 10px;
+				line-height: 32px;
+				font-size: 14px;
+			}
+			textarea, input, select{
+				display: block;
+				float: left;
+				width: 620px;
+				border: solid 1px #ccc;
+				text-indent: 8px;
+				font-size: 14px;
+			}
+			textarea{
+				height: 80px;
+			}
+			input, select{
+				box-sizing: content-box;
+				line-height: 30px;
+				height: 30px;
+			}
+			.file_btn{
+				position: relative;
+				display: block;
+				line-height: 30px;
+				border: solid 1px #ccc;
+				background: #eee;
+				color: #666;
+				width: 100px;
+				border-radius: 4px;
+				float: left;
+				font-size: 14px;
+				color: #666;
+				text-align: center;
+				input{
+					position: absolute;
+					width: 100%;
+					height: 100%;
+					opacity: 0;
+					filter: alpha(opacity=0);
+					top: 0;
+					left: 0;
+					cursor: pointer;
+				}
+			}
+			p.list_tips{
+				width: 100%;
+				float: left;
+				padding-left: 88px;
+				font-size: 14px;
+				line-height: 30px;
+				color: #999;
+			}
+		}
+	}
+	.post_list{
+		margin: 0 32px;
+		padding: 40px 90px;
+		border-top: solid 1px #ccc;
+		a{
+			display: inline-block;
+			margin-right: 24px;
+			border: solid 1px @c_app;
+			padding: 0 34px;
+			line-height: 34px;
+			border-radius: 4px;
+			&.full{
+				background: @c_app;
+				color: #FFF;
+			}
+			&.hollow{
+				color: @c_app;
+			}
+		}
+	}
+	.mask_table{
+		.tipsBox{
+			width: 876px;
+			height: 600px;
+		}
+		.choose_search{
+			position: relative;
+			padding-bottom: 8px;
+			input{
+				width: 500px;
+				float: right;
+				height: 30px;
+				border: solid 1px #ccc;
+				font-size: 14px;
+				text-indent: 8px;
+				&:focus{
+					border-color: @c_app;
+				}
+			}
+			._search_btn{
+				position: absolute;
+				right: 0;
+				margin: auto;
+				top: 0;
+				bottom: 0;
+				._icon_account(40px,30px,10px,-18px);
+				&:hover{
+					._icon_account(40px,30px,10px,-43px);
+				}
+			}
+		}
+		.choose_table{
+			width: 100%;
+			display: block;
+			margin-right: 0;
+			height: 445px;
+			overflow-y: auto;
+			border-bottom: solid 1px #ccc;
+		}
+		.no_data{
+			font-size: 14px;
+			line-height: 50px;
+			color: #999;
+			text-align: center;
+			display: block;
+		}
+		table{
+			thead th{
+				text-align: left;
+				font-size: 14px;
+				color: @c_font;
+				line-height: 45px;
+				font-weight: normal;
+				border-bottom: solid 1px #ccc;
+			}
+			tbody{
+				td{
+					line-height: 44px;
+					font-size: 14px;
+					color: #666;
+				} 
+			}
+		}
+		.btnGroup{
+			a{
+				margin: 10px 5px;
+				width: 80px;
+				line-height: 28px;
+			}
+		}
+	}
+	.goods_table{
+		.acc_search_type{
+			border-right: solid 1px #ccc;
+			line-height: 30px;
+			width: 100px;
+			.list{
+				width: 100px;
+				top: 31px;
+				position: absolute;
+				margin: auto;
+				box-sizing: border-box;
+				a{
+					line-height: 30px;
+				}
+			}
+		}
+		tbody{
+			td{
+				padding: 10px 0;
+				
+				img{
+					width: 70px;
+					height: 70px;
+				}
+				.goods_d{
+					margin-top: 12px;
+					margin-left: 22px;
+					span{
+						display: block;
+						font-size: 14px;
+						line-height: 24px;
+					}
+				}
+			}
+		}
+		.btnGroup{
+			& > span{
+				line-height: 46px;
+				color: #999;
+				font-size: 14px;
+			}
+		}
+	}
+}
+/*goods_change*/
+.goods_change{
+	padding: 0 26px;
+	.list{
+		line-height: 30px;
+		padding-bottom: 45px;
+		& > input,& > select{
+			margin-right: 30px;
+		}
+		& > label{
+			display: inline-block;
+			padding: 0 16px;
+			text-align: center;
+			font-size: 14px;
+			color: #999;	
+		}
+		& > input, .goods_search{
+			display: inline-block;
+			box-sizing: border-box;
+			height: 30px;
+			border: solid 1px #ccc;
+			text-indent: 8px;
+			border-radius: 4px;
+			&:focus{
+				border-color: @c_app;
+			}
+		}
+		& > select{
+			display: inline-block;
+			height: 30px;
+			width: 164px;
+			border-color: #ccc;
+			text-indent: 8px;
+			border-radius: 4px;
+			&:focus{
+				border-color: @c_app;
+			}
+		}
+		.goods_btn{
+			display: inline-block;
+			border-radius: 4px;
+			border: solid 1px #ccc;
+			padding: 0 12px;
+			font-size: 14px;
+			color: @c_font;
+		}
+		&.imageGroup{
+			position: relative;
+			label{
+				float: left;
+			}
+			.imageBox{
+				position: relative;
+				float: left;
+				margin-right: 26px;
+				label{
+					position: relative;
+					display: inline-block;
+					width: 100px;
+					height: 100px;
+					border: solid 1px #ccc;
+					background-color: #FFF;
+					cursor: pointer;
+					line-height: 100px;
+					text-align: center;
+					color: #999;
+					font-size: 14px;
+					img{
+						width: 100%;
+						height: 100%;
+					}
+				}
+				input{
+					display: none;
+				}
+				span{
+					position: absolute;
+					text-align: center;
+					bottom: -30px;
+					width: 100%;
+					left: 0;
+					color: #999;
+					font-size: 14px;
+				}
+			}
+		}
+	}
+	.xinxi,.jiage{
+		background-color: #fafafa;
+		border-top: solid 1px #e5e5e5;
+		.acc_tableBar{
+			margin-left: 20px;
+			input{
+				margin-right: 0;
+			}
+		}
+	}
+	.color_list,.size_list,.biaoqian_list{
+		span.type{
+			padding: 0 24px;
+			line-height: 28px;
+			display: inline-block;
+			margin-right: 10px;
+			border: solid 1px @c_app;
+			color: @c_app;
+			border-radius: 4px;
+			font-size: 14px;
+			position: relative;
+			a{
+				content:'';
+				p osition: absolute;
+				right: -8px;
+				top: -8px;
+				background-color: #999;
+				text-align: center;
+				._icon_account(16px,16px,-253px,-20px);
+			}
+		}
+		input{
+			padding: 0;
+		}
+	}
+	.style_list, .level_list{
+		.list_box{
+			width: 800px;
+			margin-left: 5px;
+			a{
+				display: inline-block;
+				font-size: 14px;
+				color: @c_font;
+				padding: 0 14px;
+				line-height: 28px;
+				border-radius: 4px;
+				border: solid 1px #ccc;
+				margin-right: 20px;
+				margin-bottom: 10px;
+				&.active{
+					color: #FFF;
+					background: @c_app;
+					border-color: @c_app;
+				}
+			}
+		}
+	}
+	.guige{
+		.list{
+			padding-bottom: 26px;
+		}
+		.img_color{
+			padding: 0 65px;
+			.imageBox{
+				margin-bottom: 16px;
+				p{
+					font-size: 14px;
+					color: @c_font;
+				}
+			}
+		}
+		.acc_tableBar{
+			text-align: center;
+			thead{
+				background: #f2f2f2;	
+			}
+			th{
+				text-align: center;
+				line-height: 50px;
+			}
+			td{
+				line-height: 38px;
+				padding: 0;
+			}
+			input{
+				width: 90%;
+				height: 80%;
+				text-align: center;
+				border: solid 1px #ccc;
+			}
+		}
+		.table_btnGroup{
+			line-height: 30px;
+			margin-top: 20px;
+			font-size: 14px;
+			color: #666;
+			input{
+				height: 28px;
+				border: solid 1px #ccc;
+				border-radius: 4px;
+				width: 80px;
+				text-align: center;
+				margin-left: 8px;
+				margin-right: 20px;
+			}
+			a.write_all{
+				padding: 0 12px;
+				line-height: 30px;
+				border-radius: 4px;
+				background-color: @c_app;
+				display: inline-block;
+				color: #FFF;
+				font-size: 14px;
+			}
+		}
+	}
+	.trumbowyg-box{
+		width: 100%;
+	}
+	.jiage{
+		padding-bottom: 50px;
+		.acc_tableBar{
+			background: #FFF;
+			input{
+				width: 80px;
+			}
+			a{
+				color: @c_font;
+				&:hover{
+					color: @c_app;
+				}
+			}
+			td{
+				border-bottom: solid 1px #eee;
+			}
+			table{
+				border-bottom: none;
+			}
+			.delete, .tipsBar{
+				display: none;
+			}
+			.bottomBar{
+				padding: 0 20px;
+				border: solid 1px #eee;
+				border-top: none;
+				font-size: 14px;
+				color: @c_font;
+				text-align: left;
+				.icon{
+					width: 16px;
+					height: 16px;
+					display: inline-block;
+					background: @c_app;
+					color: #FFF;
+					text-align: center;
+					font-size: 16px;
+					line-height: 16px;
+					margin-right: 4px;
+				}
+			}
+		}
+		.yulanBar{
+			display: none;
+			width: 355px;
+			margin-right: 70px;
+			.titleBar{
+				font-size: 14px;
+			}
+			.box{
+				border: solid 1px #e6e6e6;
+				background: #FFF;
+				padding: 10px 20px;
+				p{
+					display: block;
+					border-bottom: solid 1px #e6e6e6;
+					text-align: right;
+					margin-right: 20px;
+					font-size: 14px;
+					color: @c_font;
+					span{
+						width: 80px;
+						text-align: right;
+						display: inline-block;
+					}
+				}
+			}
+		}
+	}
+	.goodsSearch{
+		position: relative;
+	}
+	.goods_search{
+		width: 520px;
+		border-radius: 4px 0 0 4px !important;
+		border-color: @c_app !important;
+		margin-right: 0 !important;
+	}
+	.search_btn{
+		position: relative;
+		display: inline-block;
+		height: 28px;
+		width: 72px;
+		border: solid 1px #ccc;
+		border-radius: 0 4px 4px 0;
+		border-left: none;
+		border-color: @c_app;
+		span{
+			position: absolute;
+			margin: auto;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			._icon_account(18px,18px,0,-50px);
+		}
+	}
+	.goods_selectBox{
+		display: none;
+		position: absolute;
+		top: 30px;
+		left: 0;
+		width: 100%;
+		height: 250px;
+		background-color: #FFF;
+		overflow: hidden;
+		z-index: 9;
+		box-sizing: border-box;
+		border: solid 1px #e5e5e5;
+		border-top: none;
+		.group_1{
+			width: 150px;
+			border-right: solid 1px #e5e5e5;
+		}
+		.group_2{
+			// width: 180px;
+			width: 440px;
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+		.group{
+			overflow-y: auto;
+			// border-right: solid 1px #e5e5e5;
+			height: 100%;
+			a{
+				display: block;
+				line-height: 30px;
+				font-size: 14px;
+				color: #666;
+				text-indent: 18px;
+				&:hover, &.active{
+					color: @c_app;
+					background-color: #f2f2f2;
+				}
+			}
+		}
+		.common_words{
+			display: none;
+			padding-left: 16px;
+			p{
+				font-size: 14px;
+				color: #666;
+			}
+			a{
+				display: inline-block;
+				line-height: 30px;
+				padding: 0 8px;
+				border: solid 1px #dbdbdb;
+				border-radius: 10px;
+				color: #666;
+				font-size: 14px;
+				margin-right: 15px;
+			}
+		}
+	}
+	.goods_btnGroup{
+		margin: 54px auto;
+		padding: 0 30px;
+		a{
+			display: block;
+			width: 148px;
+			line-height: 36px;
+			text-align: center;
+			border: solid 1px @c_app;
+			background-color: @c_app;
+			color: #FFF;
+			font-size: 16px;
+			border-radius: 4px;
+			&.hollow{
+				background: none;
+				color: @c_app;
+			}
+			&.gray{
+				background-color: #999;
+				border-color: #999;
+				margin-left: 30px;
+			}
+		}
+	}
+}
+/*acc_setting*/
+.acc_setting{
+	border: solid 1px #e5e5e5;
+	margin: 20px 38px 0;
+	transition: all 400ms ease-out;
+	height: 101px;
+	overflow: hidden;
+	.set_title{
+		position: relative;
+		line-height: 50px;
+		padding: 0 16px;
+		background: #f8f8f8;
+		font-size: 16px;
+		font-weight: bold;
+		border-bottom: solid 1px #e5e5e5;
+		span.icon{
+			display: inline-block;
+			margin-left: 8px;
+			._icon_account(10px,8px,-37px,-3px);
+		}
+		.toggle{
+			color: @c_font;
+			&.active{
+				span.icon{
+					._icon_account(10px,8px,-37px,-43px);
+				}
+			}
+		}
+		.acc_toggleBar{
+			position: absolute;
+			margin: auto;
+			right: 16px;
+			top: 0;
+			bottom: 0;
+		}
+	}
+	.set_box{
+		position: relative;
+		font-size: 14px;
+		color: #666;
+		.title_tips{
+			line-height: 70px;
+			padding: 0 30px;
+		}
+		.close_tips{
+			line-height: 50px;
+			padding: 0 30px;
+			color: #999;
+			height: 50px;
+			overflow: hidden;
+			transition: all 400ms ease-out;
+		}
+		.list{
+			margin-bottom: 10px;
+			padding: 0 30px;
+			label{
+				width: 100px;
+				text-align: right;
+				margin-right: 10px;
+				line-height: 30px;
+				display: inline-block;
+				color: @c_font;
+			}
+			input{
+				width: 300px;
+				border-radius: 4px;
+				border: solid 1px #ccc;
+				outline: none;
+				height: 28px;
+				text-indent: 8px;
+			}
+		}
+		.tips_list{
+			margin: 20px auto;
+			span{
+				margin-left: 115px;
+				display: inline-block;
+				color: #ff0000;
+				line-height: 24px;
+			}
+		}
+		.btn_list{
+			margin-left: 115px;
+			padding-bottom: 30px;
+			a{
+				display: inline-block;
+				width: 150px;
+				line-height: 35px;
+				text-align: center;
+				color: #FFF;
+				background: @c_app;
+				border-radius: 4px;
+			}
+		}
+	}
+	&.set_wx{
+		.list:first-of-type{
+			margin-top: 50px;
+		}
+		.btn_list{
+			padding-top: 10px;
+			padding-bottom: 10px;
+			margin-bottom: 0;
+		}
+		.tips_list{
+			margin-top: 0;
+			span{
+				color: #999;
+			}
+		}
+	}
+	&.set_bank{
+		padding-bottom: 0;
+		.list:first-of-type{
+			margin-top: 50px;
+		}
+		.tips_list{
+			margin-top: 0;
+			span{
+				color: #999;
+			}
+		}
+	}
+	.card_box{
+		margin: 0 35px;
+		padding-top: 20px;
+		padding-bottom: 25px;
+		border-top: solid 1px #eeeeee;
+		.card{
+			position: relative;
+			float: left;
+			width: 270px;
+			height: 160px;
+			overflow: hidden;
+			border-radius: 4px;
+			box-sizing: border-box;
+			border: solid 1px #e6e6e6;
+			margin-right: 16px;
+			margin-bottom: 16px;
+			.cardName{
+				display: block;
+				text-align: right;
+				color: #999;
+				font-size: 18px;
+				padding-right: 18px;
+				padding-top: 12px;
+				padding-bottom: 8px;
+				background: #f5f5f5;
+			}
+			p{
+				background: #f5f5f5;
+				padding-left: 16px;
+				font-size: 14px;
+				color: #666;
+				padding-bottom: 8px;
+			}
+			.cardNum{
+				display: block;
+				padding-left: 16px;
+				font-size: 18px;
+				color: #333;
+			}
+			.cardBand{
+				display: block;
+				padding-left: 16px;
+				font-size: 12px;
+				color: #999;
+				line-height: 30px;
+			}
+			.cardUser{
+				display: block;
+				padding-left: 16px;
+				font-size: 14px;
+				color: #666;
+			}
+			.delete{
+				display: none;
+				position: absolute;
+				right: 20px;
+				bottom: 15px;
+				color: @c_app;
+			}
+			&:hover{
+				border-color: @c_app;
+				& > .delete{
+					display: block;
+				}
+			}
+		}
+	}
+}
+/*
+	acc_common
+	品牌信息
+	个人信息	
+*/
+.acc_common{
+	.common_main{
+		padding: 16px 20px;
+	}
+	.common_list{
+		margin-bottom: 12px;
+		label{
+			position: relative;
+			width: 100px;
+			text-indent: 15px;
+			font-size: 14px;
+			color: @c_font;
+			display: block;
+			float: left;
+			line-height: 32px;
+			&.must::after{
+				content: '*';
+				color: red;
+				font-size: 14px;
+				position: absolute;
+				line-height: 32px;
+				left: -10px;
+				top: 0;
+			}
+		}
+		input{
+			width: 200px;
+			display: block;
+			float: left;
+			line-height: 30px;
+			text-indent: 8px;
+			border: solid 1px #ccc;
+			border-radius: 4px;
+			font-size: 14px;
+			color: #666;
+		}
+		select{
+			width: 110px;
+			float: left;
+			margin-right: 15px;
+			line-height: 30px;
+			box-sizing: content-box;
+			border: solid 1px #ccc;
+			height: 30px;
+			text-indent: 8px;
+		}
+		textarea{
+			float: left;
+			display: block;
+			width: 100%;
+			min-height: 110px;
+			border: solid 1px #ccc;
+			border-radius: 4px;
+		}
+	}
+	.style_list{
+		.list_box{
+			width: 800px;
+			margin-left: 5px;
+			a{
+				display: inline-block;
+				font-size: 14px;
+				color: @c_font;
+				padding: 0 14px;
+				line-height: 28px;
+				border-radius: 4px;
+				border: solid 1px #ccc;
+				margin-right: 20px;
+				margin-bottom: 10px;
+				&.active{
+					color: #FFF;
+					background: @c_app;
+					border-color: @c_app;
+				}
+			}
+		}
+	}
+	.textarea_tips{
+		margin-left: 100px;
+		font-size: 14px;
+		color: #999;
+		line-height: 30px; 
+	}
+	.imageUpload_list{
+		margin-bottom: 20px;
+		label.uploadBtn{
+			position: relative;
+			float: left;
+			margin-right: 24px;
+			width: 98px;
+			height: 98px;
+			border: solid 1px #ccc;
+			text-align: center;
+			line-height: 98px;
+			font-size: 14px;
+			color: #999;
+			text-indent: 0;
+			overflow: hidden;
+			cursor: pointer;
+			img{
+				position: absolute;
+				width: 100%;
+				height: auto;
+				margin: auto;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+			}
+		}
+		input{
+			display: none;
+		}
+		.otherBox{
+			float: left;
+			padding-top: 20px;
+			span{
+				display: block;
+				font-size: 14px;
+				color: #999;
+				line-height: 24px;
+			}
+		}
+	}
+	.btn_list{
+		margin-left: 100px;
+		margin-top: 40px;
+		a{
+			display: inline-block;
+			width: 100px;
+			line-height: 28px;
+			color: #FFF;
+			border: solid 1px @c_app;
+			background: @c_app;
+			border-radius: 4px;
+			text-align: center;
+			margin-right: 20px;
+			&.hollow{
+				background: none;
+				color: @c_app;
+			}
+		}
+	}
+}
