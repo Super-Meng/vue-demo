@@ -3,18 +3,6 @@
   <meta charset="utf-8">
 </head>
 <body>
-  <div class="goodsBox"></div>
-  <div class="demo">{{message}}
-    <input v-model="message">
-  </div>
-  <script src="js/libs/vue.min.js"></script>
-  <script src="js/vue/main.js"></script>
-  <script>
-    new Vue({
-    	el: '.demo',
-    	data: {
-    		message: 'Hello Vue.js!'
-    	}
-    })
-  </script>
+  <goods_box></goods_box>
+  <script src="build/index.build.js"></script>
 </body>

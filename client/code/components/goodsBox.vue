@@ -87,7 +87,7 @@
 				display: inline-block;
 				width: 15px;
 				height: 14px;
-				background: url(../../image/icon_like.png) no-repeat;
+				background: url(../image/icon_like.png) no-repeat;
 				background-position: top center;
 			}
 			&.active > i, &:hover > i{
@@ -117,25 +117,15 @@
 				a.like(href="javascript:" v-if='Goods.like_is == false')
 						i
 						span {{Goods.like_num}}
-
 </template>
 
 <script>
+import { DATA_GOODS } from '../store/getters'
+
 export default{
-	el: '.goodsBox',
-	data() {
-		return {
-			goods: [
-				{
-					src: 'image/index/g_1.jpg',
-					name: 'name',
-					type: 'type',
-					price_now: 'price_now',
-					price_old: 'price_old',
-					like_is: false,
-					like_num: 'like_num',
-				}
-			]
+	vuex: {
+		getters: {
+			goods: DATA_GOODS
 		}
 	}
 }

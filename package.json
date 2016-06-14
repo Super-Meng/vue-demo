@@ -47,6 +47,7 @@
     "vue-html-loader": "^1.2.2",
     "vue-loader": "^8.5.2",
     "vue-style-loader": "^1.0.0",
+    "vuex": "^0.6.3",
     "webpack": "^1.13.1"
   }
 }

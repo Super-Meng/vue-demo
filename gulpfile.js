@@ -1,22 +1,23 @@
 var gulp = require('gulp')
 // 引入组件
-var pug        = require('gulp-pug')
-var less       = require('gulp-less')
-var cssauto    = require('gulp-autoprefixer')
-var sourcemaps = require('gulp-sourcemaps')
-// var concat     = require('gulp-concat')
-var webpack    = require('gulp-webpack')
-var named      = require('vinyl-named')
-var cleanCSS   = require('gulp-clean-css')
-var uglify     = require('gulp-uglify')
-var imagemin   = require('gulp-imagemin')
-var pngcrush   = require('imagemin-pngcrush')
-var cache      = require('gulp-cache')
-var changed    = require('gulp-changed')
-var plumber    = require("gulp-plumber")
-var notify     = require("gulp-notify")
-var del        = require('del')
-var path       = require('path')
+var pug         = require('gulp-pug')
+var less        = require('gulp-less')
+var cssauto     = require('gulp-autoprefixer')
+var sourcemaps  = require('gulp-sourcemaps')
+// var concat   = require('gulp-concat')
+var webpack     = require('webpack')
+var gulpWebpack = require('gulp-webpack')
+var named       = require('vinyl-named')
+var cleanCSS    = require('gulp-clean-css')
+var uglify      = require('gulp-uglify')
+var imagemin    = require('gulp-imagemin')
+var pngcrush    = require('imagemin-pngcrush')
+var cache       = require('gulp-cache')
+var changed     = require('gulp-changed')
+var plumber     = require("gulp-plumber")
+var notify      = require("gulp-notify")
+var del         = require('del')
+var path        = require('path')
 
 var codeDir = 'client/code'
 var destDir = 'client/dest'
@@ -57,35 +58,31 @@ gulp.task('less', function(){
 // js
 gulp.task('js', function(){
 	// clean
-	del.sync(destDir + '/js')
-	// 生成js
-	// gulp.src(codeDir + '/js/*.js')
-	// 	.pipe(plumber({errorHandler: notify.onError("error: <%= error.message %>")}))
-	// 	.pipe(changed(destDir + '/js'))
-	// 	// .pipe(concat('common.js'))
-	// 	// .pipe(uglify())
-	// 	.pipe(gulp.dest(destDir + '/js'))
-	// 生成js插件
-	gulp.src(codeDir + '/js/**')
-		.pipe(gulp.dest(destDir + '/js'))
+	del.sync(destDir + '/build')
 	// vue
-	gulp.src(codeDir + '/js/main.js')
+	gulp.src(codeDir + '/js/**')
+		.pipe(plumber({errorHandler: notify.onError("error: <%= error.message %>")}))
 		.pipe(named())
-		.pipe(webpack({
-			watch: true,
+		.pipe(sourcemaps.init())
+		.pipe(gulpWebpack({
+			// watch: true,
+			babel: {
+				presets: ['es2015']
+			},
 			module: {
 				loaders: [
+					{ test: /\.(es6|js)$/, loader: 'babel'},
 					{ test: /\.vue$/, loader: 'vue'},
-					{ test: /\.(png|jpg)$/, loader: 'url-loader?limit=8192'},
+					{ test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192'},
 				],
 			},
-			babel: {
-				presets: ['es2015'],
-				plugins: ['transform-runtime'],
+			devtool: 'source-map',
+			// plugins: [new webpack.optimize.UglifyJsPlugin()],
+			output: {
+				filename: '[name].build.js',
 			},
-			// devtool: 'source-map',
 		}))
-		.pipe(gulp.dest(destDir + '/js/vue'))
+		.pipe(gulp.dest(destDir + '/build'))
 })
 // 压缩图片
 gulp.task('image', function(){
