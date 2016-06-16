@@ -55,6 +55,14 @@ gulp.task('less', function(){
 	gulp.src(codeDir + '/less/*.css')
 		.pipe(gulp.dest(destDir + '/css'))
 })
+// json
+gulp.task('json', function(){
+	// clean
+	del.sync(destDir + '/json')
+
+	gulp.src(codeDir + '/json/**')
+		.pipe(gulp.dest(destDir + '/json'))
+})
 // js
 gulp.task('js', function(){
 	// clean
@@ -65,7 +73,7 @@ gulp.task('js', function(){
 		.pipe(named())
 		.pipe(sourcemaps.init())
 		.pipe(gulpWebpack({
-			// watch: true,
+			watch: true,
 			babel: {
 				presets: ['es2015']
 			},
@@ -103,11 +111,15 @@ gulp.task('clean', function(){
 })
 // 默认任务
 gulp.task('default', ['clean'], function(){
-	gulp.run('pug', 'less', 'js', 'image')
+	gulp.run('pug', 'less', 'js', 'json', 'image')
 	// 监听文件变化
-	gulp.watch(codeDir + '/pug/**',   ['pug'])
-	gulp.watch(codeDir + '/less/**',  ['less'])
-	gulp.watch(codeDir + '/js/**',    ['js'])
+	gulp.watch(codeDir + '/pug/**',         ['pug'])
+	gulp.watch(codeDir + '/less/**',        ['less'])
+	gulp.watch(codeDir + '/js/**',          ['js'])
+	gulp.watch(codeDir + '/api/**',         ['js'])
+	gulp.watch(codeDir + '/store/**',       ['js'])
+	gulp.watch(codeDir + '/components/**',  ['js'])
+	gulp.watch(codeDir + '/json/**',        ['json'])
 	gulp.watch(codeDir + '/image/**', ['image']).on('change', function(event){
 		if(event.type == 'deleted'){
 			var url = destDir + '/' + path.relative(codeDir, event.path)

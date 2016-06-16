@@ -117,15 +117,20 @@
 				a.like(href="javascript:" v-if='Goods.like_is == false')
 						i
 						span {{Goods.like_num}}
+button(@click='pageClick') next
 </template>
 
 <script>
+import { pageClick } from '../store/actions'
 import { DATA_GOODS } from '../store/getters'
 
 export default{
 	vuex: {
 		getters: {
 			goods: DATA_GOODS
+		},
+		actions: {
+			pageClick: pageClick
 		}
 	}
 }
