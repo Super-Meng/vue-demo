@@ -84,6 +84,11 @@ gulp.task('js', function(){
 					{ test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192'},
 				],
 			},
+			resolve: {
+				alias: {
+					getters: codeDir + '/vuex/getters'
+				}
+			},
 			devtool: 'source-map',
 			// plugins: [new webpack.optimize.UglifyJsPlugin()],
 			output: {

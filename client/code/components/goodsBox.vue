@@ -121,8 +121,8 @@ button(@click='pageClick') next
 </template>
 
 <script>
-import { pageClick } from '../store/actions'
-import { DATA_GOODS } from '../store/getters'
+import { pageClick } from '../vuex/actions'
+import { DATA_GOODS } from '../vuex/getters'
 
 export default{
 	vuex: {

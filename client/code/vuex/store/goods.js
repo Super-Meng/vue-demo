@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import { GET_GOODS } from '../api/goods'
+import { GET_GOODS } from '../../api/goods'
 
 Vue.use(Vuex)
 
