@@ -1,9 +1,9 @@
 import Vue from 'vue'
-import goods_box from '../components/goodsBox.vue'
-import store from '../vuex/store/goods'
+import banner from '../components/banner.vue'
+import store from '../vuex/store'
 
 new Vue({
 	el: 'body',
 	store,
-	components: { goods_box },
+	components: { banner },
 })

@@ -71,16 +71,15 @@ gulp.task('js', function(){
 	gulp.src(codeDir + '/js/**')
 		.pipe(plumber({errorHandler: notify.onError("error: <%= error.message %>")}))
 		.pipe(named())
-		.pipe(sourcemaps.init())
 		.pipe(gulpWebpack({
-			watch: true,
+			// watch: true,
 			babel: {
-				presets: ['es2015']
+				presets: ['es2015', 'stage-3']
 			},
 			module: {
 				loaders: [
-					{ test: /\.(es6|js)$/, loader: 'babel'},
 					{ test: /\.vue$/, loader: 'vue'},
+					{ test: /\.(es6|js)$/, loader: 'babel'},
 					{ test: /\.(png|jpg|gif)$/, loader: 'url-loader?limit=8192'},
 				],
 			},
@@ -90,10 +89,27 @@ gulp.task('js', function(){
 				}
 			},
 			devtool: 'source-map',
-			// plugins: [new webpack.optimize.UglifyJsPlugin()],
+			plugins: [
+				// new webpack.DefinePlugin({
+				// 	'process.env': {
+				// 		NODE_ENV: '"production"'
+				// 	}
+				// }),
+				// new webpack.optimize.UglifyJsPlugin({
+				// 	compress: {
+				// 		warnings: false
+				// 	}
+				// })
+			],
 			output: {
 				filename: '[name].build.js',
 			},
+			devServer: {
+				historyApiFallback: true,
+				hot: false,
+				inline: true,
+				grogress: true,
+			}
 		}))
 		.pipe(gulp.dest(destDir + '/build'))
 })
@@ -122,7 +138,7 @@ gulp.task('default', ['clean'], function(){
 	gulp.watch(codeDir + '/less/**',        ['less'])
 	gulp.watch(codeDir + '/js/**',          ['js'])
 	gulp.watch(codeDir + '/api/**',         ['js'])
-	gulp.watch(codeDir + '/store/**',       ['js'])
+	gulp.watch(codeDir + '/vuex/**',        ['js'])
 	gulp.watch(codeDir + '/components/**',  ['js'])
 	gulp.watch(codeDir + '/json/**',        ['json'])
 	gulp.watch(codeDir + '/image/**', ['image']).on('change', function(event){
