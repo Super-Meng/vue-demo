@@ -1,12 +1,13 @@
-import { GET_GOODS_DETAILS } from '../../api/goods'
+import { GET_GOODS_BANNER } from '../../api/goods'
 
 const state = {
-	photo: GET_GOODS_DETAILS().banner.photo
+	banner: GET_GOODS_BANNER
 }
 
 const mutations = {
-	photo: GET_GOODS_DETAILS().banner.photo
+
 }
+
 export default {
     state,
     mutations

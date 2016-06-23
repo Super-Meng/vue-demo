@@ -51,20 +51,21 @@
 	.banner
 		.image_box
 			ul
-				li(v-for='_photo in photo')
+				li(v-for='_photo in banners.photo')
 					a(v-bind:href='_photo.href')
 						img(v-bind:src='_photo.src')
-				.clear
 		.dot_box
-			a(v-for='_dot in photo' href='javascript:')
+			a(v-for='_dot in banners.photo' href='javascript:')
+		.clear
 </template>
 
 <script>
-	import { DATA_GOODS } from '../vuex/getters'
+	import { getGoodsBanner } from 'getters'
+
 	export default{
 		vuex: {
 			getters: {
-				photo: DATA_GOODS
+				banners: getGoodsBanner
 			}
 		}
 	}

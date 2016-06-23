@@ -1,1 +1,1 @@
-// export const pageClick = ({dispatch, state}) => dispatch('PAGE_GOODS', 10)
+export const set_banner = ({dispatch, state}) => dispatch('SET_BANNER')

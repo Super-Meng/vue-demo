@@ -1,9 +1,13 @@
-import Vue from 'vue'
-import banner from '../components/banner.vue'
-import store from '../vuex/store'
+import common from 'layout-js'
 
+import Vue from 'vue'
+import store from 'store'
+import Banner from 'components/Banner.vue'
+ 
 new Vue({
 	el: 'body',
 	store,
-	components: { banner },
+	components: {
+		'goods-banner': Banner,
+	}
 })

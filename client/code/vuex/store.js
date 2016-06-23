@@ -1,19 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createLogger from 'vuex/logger'
+import goods_details from 'modules/goods_details'
 
-import goods_details from './modules/goods_details'
+const debug = true
+// process.env.NODE_ENV !== 'production'
 
+Vue.config.debug = debug
 Vue.use(Vuex)
-
-Vue.config.debug = true
-
-const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
     modules: {
         goods_details
     },
-    strict: debug,
-    moddlewares: debug ? [createLogger()] : []
+	strict: debug,
+	moddlewares: debug ? [createLogger()] : []
 })
