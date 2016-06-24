@@ -1,11 +1,15 @@
-import { GET_GOODS_BANNER } from '../../api/goods'
+import { GET_GOODS_DETAILS } from '../../api/goods'
 
 const state = {
-	banner: GET_GOODS_BANNER
+	goods: GET_GOODS_DETAILS,
 }
 
 const mutations = {
-
+	CHANGE_BANNER (state, active, move, speed){
+		state.goods.banner.animate_speed = speed
+		state.goods.banner.active = active
+		state.goods.banner.move = move
+	}
 }
 
 export default {

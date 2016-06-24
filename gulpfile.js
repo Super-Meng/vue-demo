@@ -97,28 +97,29 @@ gulp.task('js', function(){
 					'store':      path.join(__dirname, codeDir + '/vuex/store.js'),
 					'getters':    path.join(__dirname, codeDir + '/vuex/getters.js'),
 					'actions':    path.join(__dirname, codeDir + '/vuex/actions.js'),
+					'mutations':  path.join(__dirname, codeDir + '/vuex/mutations.js'),
 					'components': path.join(__dirname, codeDir + '/components'),
 					'modules':    path.join(__dirname, codeDir + '/vuex/modules'),
 				}
 			},
-			devServer: {
-				historyApiFallback: true,
-				hot: false,
-				inline: true,
-				grogress: true,
-			},
-			plugins: [
-				new webpack.DefinePlugin({
-					'process.env': {
-						NODE_ENV: '"production"'
-					}
-				}),
-				new webpack.optimize.UglifyJsPlugin({
-					compress: {
-						warnings: false
-					}
-				})
-			],
+			// devServer: {
+			// 	historyApiFallback: true,
+			// 	hot: false,
+			// 	inline: true,
+			// 	grogress: true,
+			// },
+			// plugins: [
+			// 	new webpack.DefinePlugin({
+			// 		'process.env': {
+			// 			NODE_ENV: '"production"'
+			// 		}
+			// 	}),
+			// 	new webpack.optimize.UglifyJsPlugin({
+			// 		compress: {
+			// 			warnings: false
+			// 		}
+			// 	})
+			// ],
 		}))
 		.pipe(gulp.dest(destDir + '/build'))
 })

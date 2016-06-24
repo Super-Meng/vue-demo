@@ -5,13 +5,11 @@
 	.banner{
 		position: relative;
 		width: @ww;
-		height: @banner_h;
 		overflow: hidden;
 		.image_box{
 			position: relative;
 			left: 0;
 			width: 100%;
-			height: @banner_h;
 			overflow: hidden;
 			ul{
 				position: relative;
@@ -48,25 +46,35 @@
 </style>
 
 <template lang="pug">
-	.banner
+	.banner(v-touch:pan='panBanner')
 		.image_box
-			ul
-				li(v-for='_photo in banners.photo')
+			ul(style=`
+				width: {{goods.banner.photo.length * 100}}%;
+				transition: all {{goods.banner.animate_speed}}ms ease-out;
+				left: {{-7.50*goods.banner.active + goods.banner.move/100}}rem; 
+			`)
+				li(v-for='_photo in goods.banner.photo')
 					a(v-bind:href='_photo.href')
-						img(v-bind:src='_photo.src')
+						img(v-bind:src='_photo.src' @mousemove.prevent)
 		.dot_box
-			a(v-for='_dot in banners.photo' href='javascript:')
+			a(v-for='_dot in goods.banner.photo'
+				href='javascript:'
+				class='{{$index == goods.banner.active ? "active": ""}}')
 		.clear
 </template>
 
 <script>
-	import { getGoodsBanner } from 'getters'
+	import { getGoodsDetails } from 'getters'
+	import { panBanner } from 'actions'
 
 	export default{
 		vuex: {
 			getters: {
-				banners: getGoodsBanner
-			}
+				goods: getGoodsDetails,
+			},
+			actions: {
+				panBanner,
+			},	
 		}
 	}
 </script>

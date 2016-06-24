@@ -31,10 +31,9 @@ const data = {
 		"autoPlay_speed": 3600,
 		"animate_speed": 300,
 		"autoPlay": false,
+		"active": 0,
+		"move": 0,
 	}
 }
-
-
-export const GET_GOODS_BANNER = data.banner
 
 export const GET_GOODS_DETAILS = data

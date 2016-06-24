@@ -1,3 +1,1 @@
-export const getGoodsBanner = state => {
-	return state.goods_details.banner
-}
+export const getGoodsDetails = state => state.goods_details.goods
